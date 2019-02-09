@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../assets/style.css">
+    <title>ejs profile</title>
+</head>
+<body>
+    <!-- include a partial view -->
+    <% include partials/nav.ejs %>
+    <h4>Hello, I was served from a Node.js web server.  Your url was correctly entered. I was rendered via ejs</h4>
+
+    <p>this is the profile of <%= person %></p>
+    <p> profile name was passed from the url to the web page and rendered in the browser window via the following code in the js file:  <i>res.render('profile',{person: req.params.name}) </i></p>
+    <p><strong>Age: </strong><%= data.age %></p>
+    <p><strong>Age: </strong><%= data.job %></p>
+    <h5>Hobbies</h5>
+    <ul>
+        <!-- no '=' when executing code, just the less than percent -->
+        <% data.hobbies.forEach((item) => { %>
+            <!-- when getting a value from a variable, use less than percent equals -->
+            <li><%= item %></li>
+        <% }); %>
+    </ul>
+    
+</body>
+</html>
