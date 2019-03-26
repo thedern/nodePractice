@@ -1,0 +1,18 @@
+extends layout
+
+block content
+    h1 #{title}
+    form(method='POST', action='/api/getDrug')
+        #form-group
+            label Find Your Drug's Name:
+            input#DrugNameField.form-control(name='DrugNameText', type='text')
+        br
+        input#getDrug.btn.btn-primary(type='submit', value='Submit')
+        br
+        br
+        br
+        p= drugList
+  
+
+
+    
